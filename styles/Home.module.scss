@@ -1,0 +1,16 @@
+@import './variables.scss';
+
+.container {
+  background-color: getColor('platinum');
+  min-height: 100vh;
+}
+
+.header {
+  background-color: getColor('primary');
+  color: getColor('white');
+
+  h2 {
+    margin: 0;
+    padding: 1rem;
+  }
+}

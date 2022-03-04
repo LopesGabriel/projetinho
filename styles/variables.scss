@@ -1,0 +1,12 @@
+
+$pallete: (
+  'dark': #191919,
+  'light-gray': #CED0CE,
+  'primary': #F15025,
+  'platinum': #E6E8E6,
+  'white': #FFFFFF
+);
+
+@function getColor($color) {
+  @return map_get($pallete, $color);
+};
