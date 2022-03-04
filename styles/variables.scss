@@ -4,7 +4,8 @@ $pallete: (
   'light-gray': #CED0CE,
   'primary': #F15025,
   'platinum': #E6E8E6,
-  'white': #FFFFFF
+  'white': #FFFFFF,
+  'success': #34eb83
 );
 
 @function getColor($color) {

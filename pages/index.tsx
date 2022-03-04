@@ -1,17 +1,18 @@
 import { useEffect } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import { isSupported, setCurrentScreen } from 'firebase/analytics'
 import { analytics } from '../firebaseConfig'
 import styles from '../styles/Home.module.scss'
+import { defaultLang } from '../assets/lang'
+import CreateAccount from '../components/CreateAccount'
 
 const Home: NextPage = () => {
   useEffect(() => {
     isSupported()
       .then((isAnalyticsSupported) => {
         if (isAnalyticsSupported) {
-          setCurrentScreen(analytics, 'Home')
+          setCurrentScreen(analytics!, 'Home')
         }
       })
   })
@@ -29,7 +30,16 @@ const Home: NextPage = () => {
       </header>
 
       <main className={styles.main}>
-        <h1>Hi</h1>
+        <section className={styles.resume}>
+          <h1>{ defaultLang.home.main.title }</h1>
+          <h2>{ defaultLang.home.main.subtitle }</h2>
+        </section>
+
+        <section className={styles.register}>
+          <h3>Crie sua conta</h3>
+
+          <CreateAccount />
+        </section>
       </main>
 
       <footer className={styles.footer}>

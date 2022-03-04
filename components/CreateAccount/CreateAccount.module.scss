@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+
+.form-container {
+  border: 1px solid getColor('light-gray');
+  border-radius: 3px;
+  // box-shadow: 0px 2px 5px 1px rgb(0 0 0 / 20%);
+  // -webkit-box-shadow: 0px 2px 5px 1px rgb(0 0 0 / 20%);
+  padding: 0.8rem 0.5rem;
+
+  .form-item {
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+
+    input {
+      padding: .3rem;
+      margin-top: .4rem;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .action-buttons {
+    button {
+      background-color: getColor('light-gray');
+      border: 2px solid getColor('white');
+      border-radius: 3px;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: .5rem 0;
+      width: 100%;
+
+      &.btn-create {
+        background-color: getColor('primary');
+        color: getColor('white');
+      }
+
+      &:not(:first-child) {
+        margin-top: .6rem;
+      }
+    }
+  }
+}

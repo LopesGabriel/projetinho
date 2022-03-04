@@ -14,3 +14,27 @@
     padding: 1rem;
   }
 }
+
+.main {
+  section {
+    padding: 1.5rem 1rem;
+  }
+
+  .resume {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1, h2 {
+      margin: .5rem 0;
+    }
+  }
+
+  .register {
+    h3 {
+      margin: 0 0 .5rem 0;
+    }
+  }
+
+}
