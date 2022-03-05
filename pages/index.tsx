@@ -13,8 +13,6 @@ import {
 } from 'firebase/auth'
 import { analytics, auth } from '../firebaseConfig'
 import styles from '../styles/Home.module.scss'
-import { defaultLang } from '../assets/lang'
-import CreateAccount from '../components/CreateAccount'
 
 const Home: NextPage = () => {
   const createEmailAccount = async (email: string, password: string) => {
@@ -77,39 +75,6 @@ const Home: NextPage = () => {
         <meta name="description" content="Projetinho é um app para competir com seus amigos e uma forma de incentivo à atividades físicas." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <header className={styles.header}>
-        <h2>Projetinho</h2>
-      </header>
-
-      <main className={[styles.main, 'container'].join(' ')}>
-        <section className={styles.resume}>
-          <h1>{ defaultLang.home.main.title }</h1>
-          <p>{ defaultLang.home.main.subtitle }</p>
-        </section>
-
-        <section className={styles.register}>
-          <h3>Crie sua conta</h3>
-
-          <CreateAccount
-            onCreateAccountWithEmail={createEmailAccount}
-            onCreateAccountWithGoogle={createAccountWithGoogle}
-          />
-        </section>
-
-        <button onClick={deslogar}>
-          Deslogar
-        </button>
-      </main>
-
-      <footer className={styles.footer}>
-        <small>
-          Idealizado por{' '}
-          <a href='https://www.linkedin.com/in/gabriel-de-oliveira-lopes-b97093179/' target='_blank'>
-            Gabriel de Oliveira Lopes
-          </a>
-        </small>
-      </footer>
     </div>
   )
 }

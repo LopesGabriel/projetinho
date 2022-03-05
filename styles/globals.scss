@@ -2,12 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 html,
-body {
+body, #__next {
   color: getColor('dark');
   padding: 0;
   margin: 0;
   font-family: Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    height: 100%;
+    width: 100%;
 }
 
 a {
