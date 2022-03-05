@@ -16,17 +16,8 @@
 }
 
 .main {
-  section {
-    padding: 1.5rem 1rem;
-  }
-
   .resume {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    h1, h2 {
+    h1, p {
       margin: .5rem 0;
     }
   }
@@ -36,5 +27,19 @@
       margin: 0 0 .5rem 0;
     }
   }
+}
 
+.footer {
+  background-color: getColor('dark');
+  bottom: 0;
+  color: getColor('white');
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+
+  a {
+    color: getColor('white');
+  }
 }

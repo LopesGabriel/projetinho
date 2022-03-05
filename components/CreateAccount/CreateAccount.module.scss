@@ -7,22 +7,6 @@
   // -webkit-box-shadow: 0px 2px 5px 1px rgb(0 0 0 / 20%);
   padding: 0.8rem 0.5rem;
 
-  .form-item {
-    &:not(:first-child) {
-      margin-top: 1rem;
-    }
-
-    input {
-      padding: .3rem;
-      margin-top: .4rem;
-      width: 100%;
-
-      &:focus {
-        outline: none;
-      }
-    }
-  }
-
   .action-buttons {
     button {
       background-color: getColor('light-gray');
