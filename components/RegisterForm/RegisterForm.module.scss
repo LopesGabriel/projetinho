@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.heading {
+  color: getColor('primary');
+  font-weight: 500;
+}
+
+.paragraph {
+  color: rgba(getColor('dark'), .7)
+}

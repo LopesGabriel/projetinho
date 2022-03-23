@@ -8,39 +8,35 @@ import Divider from '@mui/material/Divider'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import InputAdornment from '@mui/material/InputAdornment'
-import Google from '@mui/icons-material/Google'
 import EmailIcon from '@mui/icons-material/Email'
 import KeyIcon from '@mui/icons-material/Key'
 
-import styles from './LoginForm.module.scss'
+import styles from './RegisterForm.module.scss'
 
-interface ILoginFormProps {
-  onLoginFormWithEmail?: (email: string, password: string) => Promise<void>,
-  isLoadingEmail?: boolean,
-  onLoginFormWithGoogle?: () => Promise<void>,
-  isLoadingGoogle?: boolean,
+interface IRegisterFormProps {
+  onSubmit?: (email: string, password: string) => Promise<void>,
+  isLoading?: boolean,
   onChangeForm: () => void
 }
 
-const LoginForm: FC<ILoginFormProps> = ({
-  onChangeForm,
-  isLoadingEmail,
-  isLoadingGoogle,
-  onLoginFormWithEmail,
-  onLoginFormWithGoogle
+const RegisterForm: FC<IRegisterFormProps> = ({
+  onSubmit,
+  isLoading,
+  onChangeForm
 }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [passwordConfirmation, setPasswordConfirmation] = useState('')
 
   return (
     <Container>
       <Box sx={{ padding: '16px 0' }}>
         <Typography component='h1' variant='h4' fontWeight={500} className={styles.heading}>
-          Autenticação
+          Registro
         </Typography>
 
         <Typography variant='subtitle1' className={styles.paragraph}>
-          Eleve a experiência do seu treino
+          O seu primeiro passo para uma vida mais saudavel
         </Typography>
       </Box>
 
@@ -78,23 +74,15 @@ const LoginForm: FC<ILoginFormProps> = ({
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <Box sx={{ display: 'flex', flexDirection: 'column', padding: '16px 0' }}>  
-        <Button
-          variant='text' size='small'
-          sx={{ alignSelf: 'flex-start', marginBottom: '8px' }}
-          onClick={() => onChangeForm()}
-        >
-          Criar uma conta
-        </Button>
-
-        <Button variant='contained' disabled={isLoadingEmail}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', padding: '16px 0' }}>
+        <Button variant='contained' disabled={isLoading}>
           {
-            isLoadingEmail
+            isLoading
             ? <>
                 <CircularProgress size={18} />
-                <Typography ml={1} color='primary'>Entrando</Typography>
+                <Typography ml={1} color='primary'>Criando</Typography>
               </>
-            : 'Entrar'
+            : 'Criar'
           }
         </Button>
 
@@ -102,17 +90,8 @@ const LoginForm: FC<ILoginFormProps> = ({
           ou
         </Divider>
 
-        <Button
-          variant='contained'
-          color='info'
-          startIcon={isLoadingGoogle ? null : <Google />}
-          disabled={isLoadingGoogle}
-        >
-          {
-            isLoadingGoogle
-            ? <CircularProgress size={22} />
-            : 'Entrar com o Google'
-          }
+        <Button variant='contained' fullWidth onClick={() => onChangeForm()}>
+          Usar outro provedor
         </Button>
       </Box>
 
@@ -120,4 +99,4 @@ const LoginForm: FC<ILoginFormProps> = ({
   )
 }
 
-export default LoginForm 
+export default RegisterForm
